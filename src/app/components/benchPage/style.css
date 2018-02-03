@@ -1,0 +1,40 @@
+@import url(../../custom.css);
+
+.heading {
+    background-color: var(--turquoise);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.tableContainer {
+    margin: 20px;
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 4rem;
+    width: 100%;
+}
+
+.tableHeader > div {
+    color: var(--turquoise);
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+.date {
+    width: 150px;
+}
+
+.company, .account {
+    width: 380px;
+}
+
+.ammount {
+    text-align: right;
+}

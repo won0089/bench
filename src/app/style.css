@@ -1,0 +1,11 @@
+@import url(custom.css);
+
+:global(*) {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "LLCircularWeb","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+body {
+    background-color: var(--light-grey);
+}

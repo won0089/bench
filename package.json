@@ -1,24 +1,24 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "bench",
   "version": "0.0.1",
-  "description": "React+Redux boilerplate",
+  "description": "bench test",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start:dev": "webpack-dev-server --open --config webpack.dev.js",
     "start:prod": "npm run build && node src/server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/won0089/react-redux-boilerplate.git"
+    "url": "git+https://github.com/won0089/bench.git"
   },
   "author": "Richard Cho",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/won0089/react-redux-boilerplate/issues"
+    "url": "https://github.com/won0089/bench/issues"
   },
-  "homepage": "https://github.com/won0089/react-redux-boilerplate#readme",
+  "homepage": "https://github.com/won0089/bench#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -29,6 +29,7 @@
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "jest-cli": "^22.1.4",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "webpack": "^3.9.1",
@@ -36,6 +37,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "material-ui": "^0.20.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",

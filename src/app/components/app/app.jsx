@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class App extends React.Component {
     render() {
         return (
-            <div> React + Redux Boilerplate </div>
+            <div> Bench test </div>
         );
     }
 }

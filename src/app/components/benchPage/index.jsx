@@ -23,7 +23,7 @@ class BenchPage extends React.Component {
         return ([
             <h1 key="1" className={styles.heading}> Bench Test </h1>,
             <section key="2">
-                <Table totalAmount={17515151} transactions={transactions} />
+                <Table totalAmount={this.props.totalAmount} transactions={transactions} />
             </section>
         ]);
     }
@@ -31,7 +31,8 @@ class BenchPage extends React.Component {
 
 function mapStateToProps(state, ownProps) {
     return {
-        transactions: state.transactions
+        transactions: state.transaction.transactions,
+        totalAmount: state.transaction.totalAmount
     };
 }
 

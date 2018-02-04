@@ -6,7 +6,7 @@ import * as styles from './style.css';
 const Table = (props) => {
     return (
         <div className={styles.tableContainer}>
-            <TableHeader totalAmount={1234567} />
+            <TableHeader totalAmount={props.totalAmount} />
             {props.transactions.map((transaction, idx) =>
                 <TableRow key={idx} {...transaction} />)}
         </div>

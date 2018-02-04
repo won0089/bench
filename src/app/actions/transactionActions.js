@@ -7,7 +7,10 @@ export function getTransactions() {
             const transactionResponse = await transactionAPI.getTransactions().then(response => response.json());
             dispatch({
                 type: types.fetchTransactionsSuccess,
-                transactions: transactionResponse.transactions
+                transactions: transactionResponse.transactions,
+                // calculate total amount of transactions
+                totalAmount: transactionResponse.transactions.reduce(
+                    (totalAmount, transaction) => totalAmount + Number(transaction.Amount), 0)
             });
         } catch (error) {
             // error handling to be added

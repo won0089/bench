@@ -5,6 +5,7 @@ export const transactionActionTypes = {
     fetchTransactionsFail: "FETCH_TRANSACTIONS_FAIL"
 };
 
-export const errorActionTypes ={
-    errorOccured: "ERROR_OCCURED"
+export const errorActionTypes = {
+    errorOccured: "ERROR_OCCURED",
+    clear: "CLEAR_ERROR"
 };

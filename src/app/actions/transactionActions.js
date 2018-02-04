@@ -26,7 +26,7 @@ export function getTransactions() {
 
             dispatch(fetchTransactionsComplete());
         } catch (error) {
-            dispatch(fetchTransactionsFail(error));
+            dispatch(fetchTransactionsFail(new Error("could not fetch transactions")));
         }
     };
 }

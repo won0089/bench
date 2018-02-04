@@ -6,5 +6,12 @@ export function errorOccured(error) {
             type: types.errorOccured,
             message: error.message
         });
+    }
 }
+
+export function clearError() {
+    return {
+       type: types.clear,
+       message: ''
+    }
 }

@@ -17,7 +17,7 @@ TableRow.propTypes = {
     date: PropTypes.string,
     company: PropTypes.string,
     account: PropTypes.string,
-    amount:  PropTypes.number 
+    amount:  PropTypes.string 
 }
 
 export default TableRow;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Table from '../Table';
+import formatter from '../../utils/formatter';
 import * as actions from '../../actions/transactionActions';
 import * as styles from './style.css';
 
@@ -14,17 +15,18 @@ class BenchPage extends React.Component {
     render() {
         const transactions = this.props.transactions.map((transaction) => {
             return {
-                date: transaction.Date,
+                date: formatter('date')(transaction.Date),
                 account: transaction.Ledger,
                 company: transaction.Company,
-                amount: Number(transaction.Amount)
+                amount: formatter('currency')(transaction.Amount)
             };
         });
 
         return ([
             <h1 key="1" className={styles.heading}> Bench Test </h1>,
             <section key="2">
-                <Table totalAmount={this.props.totalAmount} transactions={transactions} />
+                <Table totalAmount={formatter('currency')(this.props.totalAmount)}
+                    transactions={transactions} />
             </section>
         ]);
     }

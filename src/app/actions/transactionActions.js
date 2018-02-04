@@ -59,5 +59,17 @@ export function fetchTransactionsFail(error) {
         dispatch({ type: types.fetchTransactionsFail });
         dispatch(errorActions.errorOccured(error));
     }
+}
 
+export function refreshTransactions() {
+    return async (dispatch) => {
+        dispatch(clearTransactions());
+        dispatch(getTransactions());
+    }
+}
+
+export function clearTransactions() {
+    return {
+        type: types.clearTransactions
+    }
 }

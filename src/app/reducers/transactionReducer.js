@@ -24,6 +24,9 @@ export default function transactionReducer(state = initalState, action) {
         case types.fetchTransactionsFail:
             return Object.assign({}, state, { isLoading: false });
 
+        case types.clearTransactions:
+            return initalState;
+
         default:
             return state;
     }

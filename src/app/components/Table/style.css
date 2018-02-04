@@ -32,14 +32,17 @@
 }
 
 .date {
-    width: 150px;
+    width: 15%;
+    flex-grow: 1;
 }
 
 .company, .account {
-    width: 380px;
+    width: 30%;
+    flex-grow: 2;
 }
 
 .amount {
     text-align: right;
-    width: 100px;
+    width: 15%;
+    flex-grow: 1;
 }

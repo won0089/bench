@@ -1,6 +1,6 @@
-import config from '../../../../app.config';
+import config from '../../../app.config';
 
-class transactionAPI {
+export default class transactionAPI {
     static getTransactions() {
         return fetch(`${config.transactionApiUrl}/1.json`);
     }

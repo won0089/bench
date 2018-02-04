@@ -26,7 +26,8 @@ class BenchPage extends React.Component {
             <h1 key="1" className={styles.heading}> Bench Test </h1>,
             <section key="2">
                 <Table totalAmount={formatter('currency')(this.props.totalAmount)}
-                    transactions={transactions} />
+                    transactions={transactions}
+                    isLoading={this.props.isLoading} />
             </section>
         ]);
     }
@@ -40,7 +41,8 @@ BenchPage.propTypes = {
 function mapStateToProps(state, ownProps) {
     return {
         transactions: state.transaction.transactions,
-        totalAmount: state.transaction.totalAmount
+        totalAmount: state.transaction.totalAmount,
+        isLoading: state.transaction.isLoading
     };
 }
 

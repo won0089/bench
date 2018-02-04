@@ -9,9 +9,10 @@ const Table = (props) => {
     return (
         <div className={styles.tableContainer}>
             <TableHeader totalAmount={props.totalAmount} />
-            {props.transactions.length ?
-                props.transactions.map((transaction, idx) =>
-                    <TableRow key={idx} {...transaction} />) :
+            {props.transactions.map((transaction, idx) =>
+                <TableRow key={idx} {...transaction} />)
+            }
+            {props.isLoading &&
                 <div className={styles.loading}>
                     <CircularProgress />
                 </div>
@@ -22,7 +23,8 @@ const Table = (props) => {
 
 Table.propTypes = {
     transactions: PropTypes.array.isRequired,
-    totalAmount: PropTypes.string.isRequired
+    totalAmount: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool
 }
 
 export default Table;

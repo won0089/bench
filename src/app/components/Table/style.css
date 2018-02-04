@@ -1,0 +1,45 @@
+@import url(../../custom.css);
+
+.tableContainer {
+    margin: 20px;
+}
+
+.tableHeaderContainer {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 4rem;
+    width: 100%;
+}
+
+.tableHeaderContainer > div {
+    color: var(--turquoise);
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+.tableRowContainer {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-grey);
+    height: 4rem;
+    width: 100%;
+}
+
+.tableRowContainer > div {
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+.date {
+    width: 150px;
+}
+
+.company, .account {
+    width: 380px;
+}
+
+.amount {
+    text-align: right;
+    width: 100px;
+}

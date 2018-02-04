@@ -7,7 +7,7 @@ const formatterType = {
     },
     currency(currency) {
         // convert to string for formatting
-        const currencyStr = typeof(currency) === 'string' ? currency : currency.toString();
+        const currencyStr = typeof (currency) === 'string' ? currency : currency.toString();
         const isNegative = -currencyStr ? true : false;
         const formattedCurrency = Math.abs(currencyStr).toFixed(2);
         const [dollarPortion, centPortion] = formattedCurrency.split('.');

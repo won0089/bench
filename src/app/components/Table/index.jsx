@@ -16,7 +16,7 @@ const Table = (props) => {
 
 Table.propTypes = {
     transactions: PropTypes.array.isRequired,
-    totalAmount:  PropTypes.number.isRequired
+    totalAmount:  PropTypes.string.isRequired
 }
 
 export default Table;

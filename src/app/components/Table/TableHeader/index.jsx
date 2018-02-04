@@ -14,7 +14,7 @@ const TableHeader = (props) => {
 };
 
 TableHeader.propTypes = {
-    totalAmount:  PropTypes.number.isRequired
+    totalAmount:  PropTypes.string.isRequired
 }
 
 export default TableHeader;

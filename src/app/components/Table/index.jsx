@@ -7,7 +7,8 @@ const Table = (props) => {
     return (
         <div className={styles.tableContainer}>
             <TableHeader totalAmount={1234567} />
-            {props.transactions.map((transaction) => <TableRow {...transaction}/>)}
+            {props.transactions.map((transaction, idx) =>
+                <TableRow key={idx} {...transaction} />)}
         </div>
     );
 };

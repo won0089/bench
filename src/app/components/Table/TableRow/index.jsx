@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as styles from '../style.css';
 
 const TableRow = (props) => {
@@ -11,5 +12,12 @@ const TableRow = (props) => {
         </div>
     );
 };
+
+TableRow.propTypes = {
+    date: PropTypes.string,
+    company: PropTypes.string,
+    account: PropTypes.string,
+    amount:  PropTypes.number 
+}
 
 export default TableRow;

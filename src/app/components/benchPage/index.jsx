@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Table from '../Table';
@@ -16,7 +17,7 @@ class BenchPage extends React.Component {
                 date: transaction.Date,
                 account: transaction.Ledger,
                 company: transaction.Company,
-                amount: transaction.Amount
+                amount: Number(transaction.Amount)
             };
         });
 
@@ -27,6 +28,11 @@ class BenchPage extends React.Component {
             </section>
         ]);
     }
+}
+
+BenchPage.propTypes = {
+    transactions: PropTypes.array.isRequired,
+    totalAmount: PropTypes.number.isRequired
 }
 
 function mapStateToProps(state, ownProps) {

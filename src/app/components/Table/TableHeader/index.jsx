@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as styles from '../style.css';
 
 const TableHeader = (props) => {
@@ -11,5 +12,9 @@ const TableHeader = (props) => {
         </div>
     );
 };
+
+TableHeader.propTypes = {
+    totalAmount:  PropTypes.number.isRequired
+}
 
 export default TableHeader;

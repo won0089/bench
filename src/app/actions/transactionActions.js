@@ -4,7 +4,7 @@ import { transactionActionTypes as types } from './actionTypes';
 export function getTransactions() {
     return async (dispatch) => {
         try {
-            const transactionResponse = await transactionAPI.getTransactions().then(response => response.json());
+            const transactionResponse = await transactionAPI.getTransactions();
             dispatch({
                 type: types.fetchTransactionsSuccess,
                 transactions: transactionResponse.transactions,

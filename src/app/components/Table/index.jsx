@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import * as styles from './style.css';
@@ -12,5 +13,10 @@ const Table = (props) => {
         </div>
     );
 };
+
+Table.propTypes = {
+    transactions: PropTypes.array.isRequired,
+    totalAmount:  PropTypes.number.isRequired
+}
 
 export default Table;

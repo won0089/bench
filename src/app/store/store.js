@@ -13,7 +13,7 @@ export const defaultState = {
 export default function configureStore(initialState = defaultState) {
     return createStore(
         rootReducer,
-        defaultState,
+        initialState,
         composeWithDevTools(applyMiddleware(thunk))
     );
 };

@@ -4,8 +4,7 @@ export function errorOccured(error) {
     return async (dispatch) => {
         dispatch({
             type: types.errorOccured,
-            message: error.message,
-            ...error
+            message: error.message
         });
-    }
+}
 }

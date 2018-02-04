@@ -1,5 +1,6 @@
 import transactionAPI from '../apis/transactionAPI';
 import { transactionActionTypes as types } from './actionTypes';
+import * as errorActions from './errorActions';
 
 export function getTransactions() {
     return async (dispatch) => {
@@ -25,7 +26,7 @@ export function getTransactions() {
 
             dispatch(fetchTransactionsComplete());
         } catch (error) {
-            dispatch(fetchTransactionsFail());
+            dispatch(fetchTransactionsFail(error));
         }
     };
 }
@@ -53,8 +54,10 @@ export function fetchTransactionsComplete() {
     };
 }
 
-export function fetchTransactionsFail() {
-    return {
-        type: types.fetchTransactionsFail
-    };
+export function fetchTransactionsFail(error) {
+    return async (dispatch) => {
+        dispatch({ type: types.fetchTransactionsFail });
+        dispatch(errorActions.errorOccured(error));
+    }
+
 }

@@ -25,8 +25,7 @@ export function getTransactions() {
 
             dispatch(fetchTransactionsComplete());
         } catch (error) {
-            // error handling to be added
-            console.log(error);
+            dispatch(fetchTransactionsFail());
         }
     };
 }
@@ -51,5 +50,11 @@ export function fetchTransactions() {
 export function fetchTransactionsComplete() {
     return {
         type: types.fetchTransactionsComplete
+    };
+}
+
+export function fetchTransactionsFail() {
+    return {
+        type: types.fetchTransactionsFail
     };
 }

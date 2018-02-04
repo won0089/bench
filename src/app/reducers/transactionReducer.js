@@ -20,7 +20,10 @@ export default function transactionReducer(state = initalState, action) {
 
         case types.fetchTransactionsComplete:
             return Object.assign({}, state, { isLoading: false });
-            
+
+        case types.fetchTransactionsFail:
+            return Object.assign({}, state, { isLoading: false });
+
         default:
             return state;
     }

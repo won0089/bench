@@ -11,10 +11,14 @@ export const mockTransactions = [{
 }
 ];
 
+const mockResponse = {
+    page: 1,
+    totalCount: 4,
+    transactions: mockTransactions
+};
+
 export default class transactionAPI {
-    static async getTransactions() {
-        return await {
-            transactions: mockTransactions
-        };
+    static async getTransactions(page = 1) {
+        return await mockResponse;
     }
 }

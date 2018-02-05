@@ -35,13 +35,17 @@ describe('transaction actions test', () => {
         });
     });
 
-    it('should call FETCH_TRANSACTIONS, FETCH_TRANSACTIONS_SUCCESS, FETCH_TRANSACTIONS_COMPLETE in that order', async () =>{
-        await store.dispatch(actions.getTransactions());
-        expect(store.getActions().length).toEqual(3);
-        expect(store.getActions()[0].type).toEqual(types.transactionActionTypes.fetchTransactions);
-        expect(store.getActions()[1].type).toEqual(types.transactionActionTypes.fetchTransactionsSuccess);
-        expect(store.getActions()[2].type).toEqual(types.transactionActionTypes.fetchTransactionsComplete);
-    });
+    it(`should call FETCH_TRANSACTIONS, FETCH_TRANSACTIONS_SUCCESS, FETCH_TRANSACTIONS_COMPLETE in that order
+    and fetch 2 pages with mockTransactions`, async () => {
+            await store.dispatch(actions.getTransactions());
+            expect(store.getActions().length).toEqual(4);
+            expect(store.getActions()[0].type).toEqual(types.transactionActionTypes.fetchTransactions);
+            expect(store.getActions()[1].type).toEqual(types.transactionActionTypes.fetchTransactionsSuccess);
+            expect(store.getActions()[1].transactions).toEqual(mockTransactions);
+            expect(store.getActions()[2].type).toEqual(types.transactionActionTypes.fetchTransactionsSuccess);
+            expect(store.getActions()[2].transactions).toEqual(mockTransactions);
+            expect(store.getActions()[3].type).toEqual(types.transactionActionTypes.fetchTransactionsComplete);
+        });
 
     it('should call CLEAR_TRANSACTIONS and FETCH_TRANSACTIONS in that order', async () => {
         await store.dispatch(actions.refreshTransactions());

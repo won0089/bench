@@ -11,7 +11,10 @@ export function getTransactions() {
             dispatch(fetchTransactionsSuccess(firstPage.transactions));
 
             // first page contains total number of transactions
-            const totalPages = Math.round(firstPage.totalCount / 10);
+            // assuming each page contains same number of transactions as the
+            // first page
+            const totalPages =
+                Math.round(firstPage.totalCount / firstPage.transactions.length);
             const pageIterator = function* (currentPage) {
                 while (currentPage < totalPages) {
                     yield currentPage + 1;

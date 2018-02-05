@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start:dev": "webpack-dev-server --open --config webpack.dev.js",
-    "start:prod": "npm run build && node src/server/server.js",
+    "start": "npm run build && node src/server/server.js",
     "test": "jest --coverage"
   },
   "repository": {

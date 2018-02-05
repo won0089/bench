@@ -9,7 +9,6 @@ export function errorOccured(error) {
 
 export function clearError() {
     return {
-        type: types.clear,
-        message: ''
+        type: types.clear
     };
 }

@@ -1,4 +1,4 @@
-import reducer from '../transactionReducer';
+import reducer, { initalState as defaultState } from '../transactionReducer';
 import { transactionActionTypes as types } from '../../actions/actionTypes';
 
 describe('transaction reducer  tests', () => {
@@ -22,7 +22,7 @@ describe('transaction reducer  tests', () => {
 
     const testTotalAmount = 5;
 
-    it('should update transactions and totalAmount', () => {
+    it('should update transactions and totalAmount on FETCH_TRANSACTIONS_SUCCESS', () => {
         const state = reducer(initalState, {
             type: types.fetchTransactionsSuccess,
             transactions: testTransactions,
@@ -38,4 +38,36 @@ describe('transaction reducer  tests', () => {
 
         expect(state.totalAmount).toEqual(testTotalAmount + initalState.totalAmount);
     });
-})
+
+    it('should set isLoading to true on FETCH_TRANSACTIONS', () => {
+        const state = reducer(initalState, {
+            type: types.fetchTransactions
+        });
+
+        expect(state.isLoading).toEqual(true);
+    });
+
+    it('should set isLoading to false on FETCH_TRANSACTIONS_COMPLETE', () => {
+        const state = reducer(initalState, {
+            type: types.fetchTransactionsComplete
+        });
+
+        expect(state.isLoading).toEqual(false);
+    });
+
+    it('should set isLoading to false on FETCH_TRANSACTIONS_FAIL', () => {
+        const state = reducer(initalState, {
+            type: types.fetchTransactionsFail
+        });
+
+        expect(state.isLoading).toEqual(false);
+    });
+
+    it('should set state to initialState on CLEAR_TRANSACTIONS', () => {
+        const state = reducer(initalState, {
+            type: types.clearTransactions
+        });
+
+        expect(state).toEqual(defaultState);
+    });
+});

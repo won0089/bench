@@ -1,6 +1,6 @@
 {
   "name": "bench",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "bench test",
   "main": "index.js",
   "scripts": {

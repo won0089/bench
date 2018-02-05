@@ -14,9 +14,9 @@ render(
     <Provider store={store}>
         <MuiThemeProvider>
             <div>
-            <BenchPage />
-            <Toaster />
-</div>
+                <BenchPage />
+                <Toaster />
+            </div>
         </MuiThemeProvider>
     </Provider>,
     document.getElementById('app')

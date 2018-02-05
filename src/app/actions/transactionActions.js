@@ -29,7 +29,9 @@ export function getTransactions() {
 
             dispatch(fetchTransactionsComplete());
         } catch (error) {
-            dispatch(fetchTransactionsFail(new Error("could not fetch transactions")));
+            const errorMessage = error.status === 404 ?
+                'Page does not exist' : 'Could not fetch transactions';
+            dispatch(fetchTransactionsFail(new Error(errorMessage)));
         }
     };
 }

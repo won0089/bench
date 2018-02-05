@@ -1,7 +1,8 @@
 @import url(../../custom.css);
 
 .tableContainer {
-    margin: 20px;
+    margin: 2rem;
+    box-shadow: 1px 1px 8px var(--dark-grey);
 }
 
 .tableHeaderContainer {
@@ -10,30 +11,40 @@
     background-color: white;
     height: 4rem;
     width: 100%;
+    border-bottom: 2px solid var(--light-grey);
 }
 
 .tableHeaderContainer > div {
     color: var(--turquoise);
-    padding: 0 20px;
+    padding: 0 2rem;
     font-weight: bold;
 }
 
 .tableRowContainer {
     display: flex;
     align-items: center;
-    background-color: var(--light-grey);
     height: 4rem;
     width: 100%;
+    background-color: var(--lighter-grey);
+    border-bottom: 2px solid var(--light-grey);
 }
 
 .tableRowContainer > div {
-    padding: 0 20px;
+    padding: 0 2rem;
     font-weight: bold;
+}
+
+.tableRowContainer:nth-child(odd) > div {
+    color: var(--turquoise);
 }
 
 .date {
     width: 15%;
     flex-grow: 1;
+}
+
+.tableRowContainer > .date,  .tableRowContainer > .account{
+    color: var(--dark-grey);
 }
 
 .company, .account {

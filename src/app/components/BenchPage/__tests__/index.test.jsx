@@ -1,7 +1,9 @@
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import * as React from 'react';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import CircularProgress from 'material-ui/CircularProgress';
 import Table from '../../Table';
 import BenchPage from '../';
 
@@ -41,5 +43,16 @@ describe('<BenchPage /> tests', () => {
             expect(transaction.date).toEqual(expectedDates[idx]);
             expect(transaction.amount).toEqual(expectedAmounts[idx]);
         });
+    });
+
+    it('should render CircularProgress if there are data being loaded', () => {
+        const state = Object.assign({}, mockState,
+            { isLoading: true });
+        const wrapper = mount(
+            <MuiThemeProvider>
+                <BenchPage store={mockStore({ transaction: state })} />
+            </MuiThemeProvider>);
+
+        expect(wrapper.find(CircularProgress).length).toEqual(1);
     });
 });

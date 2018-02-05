@@ -31,7 +31,8 @@ export function getTransactions() {
         } catch (error) {
             const errorMessage = error.status === 404 ?
                 'Page does not exist' : 'Could not fetch transactions';
-            dispatch(fetchTransactionsFail(new Error(errorMessage)));
+
+            dispatch(fetchTransactionsFail({ message: errorMessage, code: error.status }));
         }
     };
 }

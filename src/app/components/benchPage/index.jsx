@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import CircularProgress from 'material-ui/CircularProgress';
 import Table from '../Table';
 import formatter from '../../utils/formatter';
 import * as actions from '../../actions/transactionActions';
 import * as styles from './style.css';
 
-class BenchPage extends React.Component {
+class BenchPage extends React.PureComponent {
     componentDidMount() {
         this.props.actions.getTransactions();
     }
@@ -26,8 +27,11 @@ class BenchPage extends React.Component {
             <h1 key="1" className={styles.heading}> Bench Test </h1>,
             <section key="2">
                 <Table totalAmount={formatter('currency')(this.props.totalAmount)}
-                    transactions={transactions}
-                    isLoading={this.props.isLoading} />
+                    transactions={transactions} />
+                {this.props.isLoading &&
+                    <div className={styles.loading}>
+                        <CircularProgress />
+                    </div>}
             </section>
         ]);
     }

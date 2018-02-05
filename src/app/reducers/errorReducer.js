@@ -7,7 +7,7 @@ export const initialState = {
 export default function errorReducer(state = initialState, action) {
     switch (action.type) {
         case types.errorOccured:
-            return Object.assign({}, state, { message: action.message });
+            return Object.assign({}, state, { message: action.message, code: action.code });
 
         case types.clear:
             return initialState;

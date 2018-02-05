@@ -21,12 +21,17 @@ class Toaster extends React.Component {
         );
     }
 
+    // retry mechanism. Clears error messages and attempts to fetch transactions
     handleOnActionClick() {
         return () => {
             this.props.errorActions.clearError();
             this.props.transactionActions.refreshTransactions();
         };
     }
+}
+
+Toaster.propTypes = {
+    message: PropTypes.string
 }
 
 function mapStateToProps(state, ownProps) {
